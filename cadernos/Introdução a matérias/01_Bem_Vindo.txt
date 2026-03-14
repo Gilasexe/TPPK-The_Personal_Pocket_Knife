@@ -1,0 +1,7 @@
+Título: Como usar os Cadernos
+
+Para adicionar páginas, basta criar arquivos .txt nesta pasta.
+A primeira linha do arquivo sempre será o título da página!
+
+Caso você queira adicionar matérias/categorias, você pode criar uma pasta em "cadernos"
+que automaticamente criará uma matéria no TPPK!
