@@ -44,13 +44,16 @@ Não quer mexer com código ou terminal? Siga os passos abaixo:
    cd TPPK-The_Personal_Pocket_Knife
    
 2. **Crie e ative o ambiente Virtual (Recomendado)**
-   1-python -m venv .venv (o .venv pode ser nomeado como qualquer coisa)
-   2-source .venv/bin/activate
+   ```bash
+   #1
+   python -m venv .venv (o .venv pode ser nomeado como qualquer coisa)
+   #2
+   -source .venv/bin/activate
    
-3. **Baixe as dependencias do código**
+4. **Baixe as dependencias do código**
    ```bash
    pip freeze > requirements.txt
 
-4. **Execute o aplicativo**
+5. **Execute o aplicativo**
    ```bash
    python main.py
