@@ -13,6 +13,20 @@ USUARIO_GITHUB = "Gilasexe"
 REPO_GITHUB = "TPPK-The_Personal_Pocket_Knife"   
 URL_API_GITHUB = f"https://api.github.com/repos/{USUARIO_GITHUB}/{REPO_GITHUB}/releases/latest"
 
+def obter_caminho_recursos(relativo):
+    """ Retorna o caminho para arquivos embutidos no .exe (ex: logo.png) """
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relativo)
+
+def obter_caminho_dados():
+    """ Retorna a pasta onde o .exe está rodando para salvar os 'cadernos' """
+    if getattr(sys, 'frozen', False):
+        return os.path.dirname(sys.executable)
+    return os.path.dirname(os.path.abspath(__file__))
+
 # Configuração visual
 ctk.set_appearance_mode("Dark")
 ctk.set_default_color_theme("blue") 
@@ -26,9 +40,8 @@ class App(ctk.CTk):
         self.geometry("1000x600")
 
         try:
-            # Descobre o caminho exato da logo
-            diretorio_atual = os.path.dirname(os.path.abspath(__file__))
-            caminho_logo = os.path.join(diretorio_atual, "logo.png")
+            # Descobre o caminho exato da logo, seja rodando do código ou do .exe
+            caminho_logo = obter_caminho_recursos("logo.png")
             
             # Carrega e aplica a imagem como ícone da janela
             imagem_icone = tk.PhotoImage(file=caminho_logo)
@@ -92,8 +105,7 @@ class App(ctk.CTk):
     # LÓGICA DE PASTAS DO LIVRO
     # ==========================================
     def carregar_livros_da_pasta(self):
-        diretorio_projeto = os.path.dirname(os.path.abspath(__file__))
-        pasta_base = os.path.join(diretorio_projeto, "cadernos")
+        pasta_base = os.path.join(obter_caminho_dados(), "cadernos")
 
         if not os.path.exists(pasta_base):
             pasta_exemplo = os.path.join(pasta_base, "Exemplo_Materia")

@@ -1,59 +1,31 @@
 # 🔪 TPPK - The Personal Pocket Knife
 
-Bem-vindo ao **TPPK**, o verdadeiro "Canivete Suíço" para estudantes e usuários de Linux. Desenvolvido em Python com `CustomTkinter`, este aplicativo foi desenhado para centralizar ferramentas de sistema do Arch Linux e organizar cadernos de estudo de forma dinâmica.
+![Versão Atual](https://img.shields.io/badge/Vers%C3%A3o-1.0.0-blue?style=flat-square)
+![Plataforma Windows](https://img.shields.io/badge/OS-Windows-0078D6?style=flat-square&logo=windows)
+![Plataforma Linux](https://img.shields.io/badge/OS-Arch_Linux-1793D1?style=flat-square&logo=arch-linux)
+![Python](https://img.shields.io/badge/Python-3.x-F5D04C?style=flat-square&logo=python)
 
----
+O **TPPK** (The Personal Pocket Knife) é um canivete suíço digital com interface gráfica moderna desenvolvida em Python (CustomTkinter). Ele centraliza atalhos de sistema operacional, ferramentas de manutenção e um almanaque pessoal para estudos e desenvolvimento.
+
+Originalmente projetado para otimizar fluxos no Arch Linux, o TPPK possui versões adaptadas para gerenciar instâncias do Windows de maneira rápida e indolor.
 
 ## ✨ Funcionalidades
 
-* **🛠️ Ferramentas Linux Integradas:**
-    * **Controle de GPU (EnvyControl):** Alterna facilmente entre os modos NVIDIA (foco em performance/jogos), Integrada (economia de bateria) e Híbrido, lidando nativamente com a autenticação de administrador (`pkexec`).
-    * **Faxina de Sistema:** Limpa o cache antigo do Pacman com um clique, liberando espaço no SSD sem precisar decorar comandos no terminal.
-* **📚 Leitor de Almanaque Dinâmico:**
-    * Um leitor de textos embutido que gera páginas e categorias automaticamente.
-    * Basta soltar arquivos `.txt` dentro da pasta `cadernos/` e o aplicativo constrói a interface de leitura sozinho.
-* **⚙️ Atualização via Nuvem (OTA):**
-    * Verifica automaticamente a API de Releases do GitHub em segundo plano.
-    * Avisa quando há uma nova versão disponível, mostrando o Changelog diretamente na interface.
+### 🪟 Ferramentas do Sistema
+- **Controle de Energia Dinâmico:** Alterne com um clique entre os planos de Alto Desempenho, Equilibrado e Economia de Bateria. *(No Linux: Integração com EnvyControl para GPUs Híbridas).*
+- **Faxina do Sistema:** Limpeza em um clique de arquivos temporários (`%TEMP%`) e limpeza de cache DNS (Flush DNS) para resolver pequenos bugs de rede. *(No Linux: Limpeza de pacotes órfãos do Pacman).*
 
----
+### 📚 Almanaque do Desenvolvedor (Cadernos)
+- Leitor interno de anotações dinâmico.
+- Organize seus estudos criando pastas (ex: `Python`, `Calculo`, `Banco_de_Dados`).
+- O sistema automaticamente renderiza arquivos `.txt`, utilizando a primeira linha como título e o resto como o corpo da matéria.
 
-## 🚀 Como instalar e rodar (Ambiente de Desenvolvimento)
+### ⚙️ Sistema Integrado de Updates
+- Verificação assíncrona da API do GitHub para alertar sobre novas versões sem congelar a interface.
 
-### Pré-requisitos
-* **Sistema Operacional:** Arch Linux / EndeavourOS (para as ferramentas de sistema funcionarem corretamente).
-* **Python:** 3.10 ou superior.
-* **Pacotes do Sistema:** `envycontrol`, `pacman-contrib` (para o `paccache`).
+## 🚀 Como instalar e executar
 
-## 📥 Instalação Fácil (Para Usuários)
-
-Não quer mexer com código ou terminal? Siga os passos abaixo:
-
-1. Acesse a página de [Releases](../../releases/latest) aqui do GitHub.
-2. Baixe o arquivo `.zip` da versão mais recente.
-3. Garanta que seu sistema possui as dependências nativas: `yay -S envycontrol pacman-contrib`.
-4. Extraia o ZIP e dê um duplo clique no arquivo `TPPK` para abrir. Pronto!
-
----
-
-## 💻 Instalação para Desenvolvedores (Build a partir do código)
-
-1. **Clone o repositório:**
-   ```bash
-   git clone [https://github.com/Gilasexe/TPPK-The_Personal_Pocket_Knife.git](https://github.com/Gilasexe/TPPK-The_Personal_Pocket_Knife.git)
-   cd TPPK-The_Personal_Pocket_Knife
-   
-2. **Crie e ative o ambiente Virtual (Recomendado)**
-   ```bash
-   #1
-   python -m venv .venv (o .venv pode ser nomeado como qualquer coisa)
-   #2
-   -source .venv/bin/activate
-   
-4. **Baixe as dependencias do código**
-   ```bash
-   pip freeze > requirements.txt
-
-5. **Execute o aplicativo**
-   ```bash
-   python main.py
+### Pré-requisitos (Para rodar pelo código fonte)
+Certifique-se de ter o Python 3 instalado e instale os pacotes necessários:
+```bash
+pip install customtkinter requests
