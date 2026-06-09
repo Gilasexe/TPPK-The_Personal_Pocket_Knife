@@ -1,6 +1,6 @@
 # 🔪 TPPK - The Personal Pocket Knife
 
-Bem-vindo ao **TPPK**, o verdadeiro "Canivete Suíço" para estudantes e usuários de Linux. Desenvolvido em Python com `CustomTkinter`, este aplicativo foi desenhado para centralizar ferramentas de sistema do EndeavourOS/Arch Linux e organizar cadernos de estudo de forma dinâmica.
+Bem-vindo ao **TPPK**, o verdadeiro "Canivete Suíço" para estudantes e usuários de Linux. Desenvolvido em Python com `CustomTkinter`, este aplicativo foi desenhado para centralizar ferramentas de sistema do Arch Linux e organizar cadernos de estudo de forma dinâmica.
 
 ---
 
